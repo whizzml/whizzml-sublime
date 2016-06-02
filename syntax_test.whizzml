@@ -18,10 +18,13 @@
 
 (define a-id (create-and-wait-anomaly {"dataset" "dataset/123456789098765432123456"}))
 ; <- source.whizzml meta.sexpr.whizzml
-;^ storage.whizzml
+;^ meta.function.def_form.whizzml
 ;       ^ source.symbol.whizzml
 ;             ^ support.function.whizzml
 ;                                      ^ meta.expression.map.whizzml
+
+((lambda (x) (+ x 1)) 41) ;; evaluates to 42
+; ^ meta.function.lambda.whizzml
 
 (create* ["source" "source"]
          [{"remote" "ftp://url/1"} {"remote" "ftp://url/2"}])
@@ -67,6 +70,11 @@
     (create-dataset {"source" "source/12345678901234567890abcd"})))
 ; <- source.whizzml meta.sexpr.whizzml
 ; ^ meta.function.catch_form.whizzml
+
+
+(raise "Connection problems")
+(raise -23)
+(raise {"message" "Empty dataset" "code" 42})
 
 (handle on-error
   (when (negative? (get-x))

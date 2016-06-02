@@ -1,6 +1,6 @@
 # WhizzML for SublimeText
 
-For now only sysntax higlighting, more to come.
+For now only syntax higlighting, more to come.
 Tested only in SublimeText 3, probably won't work in previous versions.
 
 ## Instalattion

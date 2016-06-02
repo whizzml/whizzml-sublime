@@ -125,7 +125,7 @@ contexts:
   binding_exp:
     - include: comment
     # - include: metadata
-    - include: operator_special
+    # - include: operator_special
     - match: '(\(\)|{}|\[\]|#{})'
       captures:
         1: constant.language.whizzml
@@ -179,13 +179,13 @@ contexts:
               pop: true
             - include: all
         - include: binding
-    - match: '(?=#\{)'
-      push:
-        - meta_scope: meta.structure.binding_exp.set.whizzml
-        - match: '(?=\])'
-          pop: true
-        - include: set
-        - include: binding
+    # - match: '(?=#\{)'
+    #   push:
+    #     - meta_scope: meta.structure.binding_exp.set.whizzml
+    #     - match: '(?=\])'
+    #       pop: true
+    #     # - include: set
+    #     - include: binding
     - match: (?=")|(?=\\)|(?=\:)|(?=\#")
       push:
         - meta_scope: meta.structure.binding_exp.string.whizzml
@@ -240,7 +240,7 @@ contexts:
     - include: string
     - include: vector
     - include: map
-    - include: set
+    # - include: set
     # - include: metadata
     - include: number
     - include: symbol
@@ -314,8 +314,8 @@ contexts:
                 - match: (?=\))
                   pop: true
                 - include: comment
-                - include: metadata
-                - include: operator_special
+                # - include: metadata
+                # - include: operator_special
                 - match: '(\(\)|{}|\[\]|#{})'
                   captures:
                     1: constant.language.whizzml
@@ -373,13 +373,13 @@ contexts:
                           pop: true
                         - include: all
                     - include: parameters_body
-                - match: '(?=#\{)'
-                  push:
-                    - meta_scope: meta.structure.multi_method_exp.set.whizzml
-                    - match: (?=\))
-                      pop: true
-                    - include: set
-                    - include: parameters_body
+                # - match: '(?=#\{)'
+                #   push:
+                #     - meta_scope: meta.structure.multi_method_exp.set.whizzml
+                #     - match: (?=\))
+                #       pop: true
+                #     - include: set
+                #     - include: parameters_body
                 - match: (?=")|(?=\\)|(?=\:)|(?=\#")
                   push:
                     - meta_scope: meta.structure.multi_method_exp.string.whizzml
@@ -574,9 +574,9 @@ contexts:
     #   scope: support.variable.whizzml
     # - match: '(?<![*+!_?\-])\*(agent|allow-unresolved-vars|command-line-args|compile-files|compile-path|err|file|flush-on-newline|in|macro-meta|math-context|ns|out|print-dup|print-length|print-level|print-meta|print-readably|proxy-classes|use-context-classloader|warn-on-reflection)\*(?![*+!_?\-])'
     #   scope: support.variable.global.whizzml
-    - match: '(?<![*+!_?\-])\b(if|cond|let|loop|recur|try|catch)\b(?![*+!_?\-])'
+    - match: '(?<![*+!_?\-])\b(if|cond|handle|let|loop|raise|recur|try|catch)\b(?![*+!_?\-])'
       scope: keyword.control.whizzml
-    - match: '(?<![*+!_?\-])\b(str|define|map|list)\b(?![*+!_?\-])'
+    - match: '(?<![*+!_?\-])\b(str|map|list)\b(?![*+!_?\-])'
       scope: storage.whizzml
     - match: '(?<![*+!_?\-])\b(create|create-and-wait|delete|wait|wait-forever)\*(?![*+!_?\-])'
       scope: support.function.whizzml
@@ -584,10 +584,12 @@ contexts:
       scope: support.function.tester.whizzml
     - match: '(?<![*+!_?\-])\b(abort|abs|acos|and|append|asin|assoc|assoc-in|atan|bigml--cdf|bigml--pdf|ceil|concat|cons|cos|cosh|count|create|create|create-and-wait|create-and-wait-anomaly|create-and-wait-anomalyscore|create-and-wait-association|create-and-wait-batchanomalyscore|create-and-wait-batchcentroid|create-and-wait-batchprediction|create-and-wait-centroid|create-and-wait-cluster|create-and-wait-correlation|create-and-wait-dataset|create-and-wait-ensemble|create-and-wait-evaluation|create-and-wait-execution|create-and-wait-library|create-and-wait-logisticregression|create-and-wait-model|create-and-wait-prediction|create-and-wait-project|create-and-wait-sample|create-and-wait-script|create-and-wait-source|create-and-wait-statisticaltest|create-anomaly|create-anomalyscore|create-association|create-batchanomalyscore|create-batchcentroid|create-batchprediction|create-centroid|create-cluster|create-correlation|create-dataset|create-dataset-split|create-ensemble|create-evaluation|create-execution|create-library|create-logisticregression|create-model|create-prediction|create-project|create-random-dataset-split|create-sample|create-script|create-source|create-statisticaltest|created-resources|dataset-choose-objective-id|dataset-get-objective-id|define|delete|dissoc|dissoc-in|div|drop|exp|fetch|filter|flatline|flatline-listify|flatline-splice|flatline-str|flatline-str-splice|floor|for|get|get-in|handle|head|identity|insert|join|keys|lambda|list|list-anomalies|list-anomalyscores|list-associations|list-batchanomalyscores|list-batchcentroids|list-batchpredictions|list-centroids|list-clusters|list-correlations|list-datasets|list-ensembles|list-evaluations|list-executions|list-libraries|list-logisticregressions|list-models|list-predictions|list-projects|list-samples|list-scripts|list-sources|list-statisticaltests|ln|log|log-error|log-info|log-warn|log10|log2|make-map|map|matches|max|max-key|mean|merge|min|min-key|not|nth|or|parse-resource-id|pow|pr-str|prog|raise|rand|rand-int|rand-range|range|re-quote|reduce|rem|repeat|repeatedly|replace|replace-first|resource-done?|resource-id|resource-id?|resource-ids|resource-type|resources|reverse|round|row-distance|row-distance-squared|sin|sinh|smacdown--actual|smacdown--aggregate-predictions|smacdown--candidates|smacdown--data->dataset|smacdown--do-iteration|smacdown--evaluate|smacdown--expected|smacdown--get-id|smacdown--make-ensemble|smacdown--p-improvement|smacdown--predictions|smacdown--project|smacdown--schedule|smacdown--trees-in-ensemble|smacdown-optimize|some|sort|sort-by-key|sqrt|stdev|str|subs|tail|take|tan|tanh|to-degrees|to-radians|update|update-and-wait|values|variance|wait|wait-forever|wait-forever*|when)\b(?![*+!_?\-])'
       scope: support.function.whizzml
-    - match: '(?<![*+!_?\-])\b(true|false|nil)\b(?![*+!_?\-])'
+    # - match: '(?<![*+!_?\-])\b(true|false|nil)\b(?![*+!_?\-])'
+    - match: '(?<![*+!_?\-])\b(true|false)\b(?![*+!_?\-])'
       scope: constant.language.whizzml
   lambda:
-    - match: \(\s*(fn)\s+
+    # - match: \(\s*(fn)\s+
+    - match: \(\s*(lambda)\s+
       captures:
         1: storage.type.function.type.whizzml
       push:
@@ -723,33 +725,37 @@ contexts:
       captures:
         2: keyword.operator.arithmetic.hexa.whizzml
   operator:
-    - match: '(?<![a-zA-Z0-9*+!_?\-])(\*|/|\<|\<=|=|==|\>|\>=|-\>)(?![a-zA-Z0-9*+!_?\-])'
+    #- match: '(?<![a-zA-Z0-9*+!_?\-])(\*|/|\<|\<=|=|==|\>|\>=|-\>)(?![a-zA-Z0-9*+!_?\-])'
+    - match: '(?<![a-zA-Z0-9*+!_?\-])(\*|/|\<|\<=|=|\>|\>=|-\>)(?![a-zA-Z0-9*+!_?\-])'
       scope: keyword.operator.whizzml
     - match: '(?<![a-zA-Z0-9*+!_?\-])(-|\+)(?![a-zA-Z0-9*+!_?\-])'
       scope: keyword.operator.whizzml
     - match: '(?<![a-zA-Z0-9*+!_?\-])(\.|\.\.)(?![a-zA-Z0-9*+!_?\-])'
       scope: keyword.operator.class.whizzml
-    - match: '%(\d+|&)?'
-      scope: variable.parameter.literal.whizzml
-    - include: operator_special
-  operator_special:
-    - match: "`|~@|~"
-      scope: keyword.control.operator.whizzml
-    - match: "#'|@"
-      scope: storage.type.function.type.whizzml
-    - match: "'"
-      scope: constant.other.quote
-    - match: \^
-      scope: constant.other.metadata.read.whizzml
+    # - match: '%(\d+|&)?'
+    #   scope: variable.parameter.literal.whizzml
+    # - include: operator_special
+  # operator_special:
+  #   - match: "`|~@|~"
+  #     scope: keyword.control.operator.whizzml
+  #   - match: "#'|@"
+  #     scope: storage.type.function.type.whizzml
+  #   - match: "'"
+  #     scope: constant.other.quote
+  #   - match: \^
+  #     scope: constant.other.metadata.read.whizzml
   parameters:
-    - match: '\['
+    # - match: '\['
+    - match: '\('
       scope: punctuation.definition.vector.begin.whizzml
       push:
         - meta_scope: meta.parameters.vector.whizzml
-        - match: '\]'
+        # - match: '\]'
+        - match: '\)'
           scope: punctuation.definition.vector.end.whizzml
           pop: true
-        - match: \&
+        # - match: \&
+        - match: \.
           scope: keyword.operator.varargs.whizzml
         # - match: '(:as)(?![a-zA-Z+!\-_?0-9*~#@''`/.$=])'
         #   scope: keyword.operator.symbolargs.whizzml
@@ -809,15 +815,15 @@ contexts:
         - include: operator
         - include: number
         - include: symbol
-  set:
-    - match: "#{"
-      scope: punctuation.definition.set.begin.whizzml
-      push:
-        - meta_scope: meta.expression.set.whizzml
-        - match: "}"
-          scope: punctuation.definition.set.end.whizzml
-          pop: true
-        - include: all
+  # set:
+  #   - match: "#{"
+  #     scope: punctuation.definition.set.begin.whizzml
+  #     push:
+  #       - meta_scope: meta.expression.set.whizzml
+  #       - match: "}"
+  #         scope: punctuation.definition.set.end.whizzml
+  #         pop: true
+  #       - include: all
   sexpr:
     - match: \((?!\))
       push:
@@ -837,21 +843,21 @@ contexts:
           pop: true
         - include: bindings_form
     # - match: (?<=\()\s*(def|declare|defstruct|defonce|defmulti)\s+
-    # - match: (?<=\()\s*define\s+
-    #   captures:
-    #     1: storage.type.variable.whizzml
-    #   push:
-    #     - meta_scope: meta.function.def_form.whizzml
-    #     - match: (?=\))
-    #       pop: true
-    #     - include: metadata
-    #     - match: \s*
-    #     - include: function_name
-    #     - match: (?<=$|.)
-    #       push:
-    #         - match: (?=\))
-    #           pop: true
-    #         - include: all
+    - match: (?<=\()\s*(define)\s+
+      captures:
+        1: storage.type.variable.whizzml
+      push:
+        - meta_scope: meta.function.def_form.whizzml
+        - match: (?=\))
+          pop: true
+        # - include: metadata
+        - match: \s*
+        - include: function_name
+        - match: (?<=$|.)
+          push:
+            - match: (?=\))
+              pop: true
+            - include: all
     # - match: (?<=\()\s*(prefer-method)\s+
     #   captures:
     #     1: storage.type.variable.whizzml
@@ -913,7 +919,8 @@ contexts:
           pop: true
         - match: '(?=[a-zA-Z+!\-_?0-9*~#@''`/.$=])'
           push:
-            - meta_scope: storage.type.java.whizzml
+            # - meta_scope: storage.type.java.whizzml
+            - meta_scope: storage.type.whizzml.whizzml
             - match: '(?![a-zA-Z+!\-_?0-9*~#@''`/.$=])'
               pop: true
             - include: symbol
@@ -924,18 +931,24 @@ contexts:
             - include: all
         - include: all
     - match: (?<=\()\s*(gen-class)\s+
+    # - match: (?<=\()\s*(handle)\s+
       captures:
         1: support.function.whizzml
+        #1: keyword.control.whizzml
       push:
         - meta_scope: meta.function.genclass_form.whizzml
+        # - meta_scope: meta.function.handle_form.whizzml
         - match: (?=\))
           pop: true
         # - include: genclass_parameters
     - match: (?<=\()\s*(gen-interface)\s+
+    # - match: (?<=\()\s*(raise)\s+
       captures:
         1: support.function.whizzml
+        # 1: keyword.control.whizzml
       push:
         - meta_scope: meta.function.geninterface_form.whizzml
+        # - meta_scope: meta.function.raise_form.whizzml
         - match: (?=\))
           pop: true
         # - include: geninterface_parameters
@@ -963,6 +976,32 @@ contexts:
               pop: true
             - include: all
         - include: all
+        # Added from below
+        - match: '(?<=\])'
+          push:
+            - match: (?=\))
+              pop: true
+            - include: comment
+            - match: '(?=\[)'
+              push:
+                - meta_scope: meta.function.body.catch_form.whizzml
+                - match: (?=\))
+                  pop: true
+                - include: comment
+                - include: parameters
+                - match: '(?<=\])'
+                  push:
+                    - match: (?=\))
+                      pop: true
+                    - include: comment
+                    - match: \(\s*
+                      push:
+                        - meta_scope: meta.function.catch.method.whizzml
+                        - match: \)
+                          pop: true
+                        - include: comment
+                        - include: function_name
+                        - include: function_body_comment
     # - match: (?<=\()\s*(((set|swap|compare-and-set)(\!))\s+)
     #   captures:
     #     2: keyword.control.whizzml
@@ -1052,21 +1091,21 @@ contexts:
         - match: '(?![a-zA-Z+!\-_?0-9*~#@''`/.$=])'
           pop: true
         - include: symbol
-    - match: '#"'
-      scope: punctuation.definition.string.begin.whizzml
-      push:
-        - meta_scope: string.regexp.whizzml
-        - match: '"'
-          scope: punctuation.definition.string.end.whizzml
-          pop: true
-        - include: scope:source.regexp#unexpected-quantifier
-        - match: ''
-          push:
-            - meta_scope: string.regexp.whizzml
-            - include: scope:source.regexp#base-literal
-          with_prototype:
-            - match: '(?=")'
-              pop: true
+    # - match: '#"'
+    #   scope: punctuation.definition.string.begin.whizzml
+    #   push:
+    #     - meta_scope: string.regexp.whizzml
+    #     - match: '"'
+    #       scope: punctuation.definition.string.end.whizzml
+    #       pop: true
+    #     - include: scope:source.regexp#unexpected-quantifier
+    #     - match: ''
+    #       push:
+    #         - meta_scope: string.regexp.whizzml
+    #         - include: scope:source.regexp#base-literal
+    #       with_prototype:
+    #         - match: '(?=")'
+    #           pop: true
   string_escape:
     - match: '\\(u[0-9a-fA-F]{4}|b|t|n|f|r|"|''|\\|[0-3]?[0-7]{1,2}|(.))'
       scope: constant.character.escape.whizzml
@@ -1074,7 +1113,7 @@ contexts:
         2: invalid.illegal.escape.string.whizzml
   symbol:
     - match: '\b[A-Z_]{2,}\b'
-      scope: constant.other.java.whizzml
+      scope: constant.other.whizzml.whizzml
     - match: '(?<![a-zA-Z+!\-_?0-9*])\*[a-z\-]{2,}\*(?![a-zA-Z+!\-_?0-9*])'
       scope: source.symbol.global.whizzml
     - match: '(?=[a-zA-Z+!\-_?0-9*=])'
@@ -1137,4 +1176,3 @@ contexts:
           scope: punctuation.definition.vector.end.whizzml
           pop: true
         - include: all
-
