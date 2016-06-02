@@ -1,0 +1,74 @@
+; SYNTAX TEST "WhizzML.sublime-syntax"
+
+; single comment
+; ^ source.whizzml comment.line.semicolon.start.whizzml
+
+;; double comment
+; <- source.whizzml comment.line.semicolon.double.whizzml
+
+("a") ; single comment
+; <- source.whizzml meta.sexpr.whizzml
+;     ^ comment.line.semicolon.whizzml
+; ^ string.quoted.double.whizzml
+
+(list "a" 1 true color ["one" "two"])
+; <- source.whizzml meta.sexpr.whizzml
+;^ storage.whizzml
+;                      ^ meta.expression.vector.whizzml
+
+(define a-id (create-and-wait-anomaly {"dataset" "dataset/123456789098765432123456"}))
+; <- source.whizzml meta.sexpr.whizzml
+;^ storage.whizzml
+;       ^ source.symbol.whizzml
+;             ^ support.function.whizzml
+;                                      ^ meta.expression.map.whizzml
+
+(create* ["source" "source"]
+         [{"remote" "ftp://url/1"} {"remote" "ftp://url/2"}])
+;<- source.whizzml meta.sexpr.whizzml
+;        <- meta.sexpr.whizzml
+;        <- meta.sexpr.whizzml
+;        ^ meta.expression.vector.whizzml
+;         ^ meta.expression.map.whizzml
+
+(let (color "green"
+      size 123)
+  {"a thing" {"s" size}
+   "another ;; thing" [size color]})
+  ; <- meta.expression.map.whizzml
+  ;          ^  meta.expression.map.whizzml
+  ;                   ^ meta.expression.vector.whizzml
+; <- source.whizzml meta.sexpr.whizzml
+
+(wait (create-source {"remote" "http://host.com/foo.csv"}) 1000)
+; <- source.whizzml meta.sexpr.whizzml
+;     ^ meta.sexpr.whizzml
+;       ^ support.function.whizzml
+;                    ^ meta.expression.map.whizzml
+
+(boolean? true)
+;<- source.whizzml meta.sexpr.whizzml
+;^ support.function.tester.whizzml
+;         ^ constant.language.whizzml
+
+(assoc {} "key" 42) ;; => {"key" 42}
+;^ support.function.whizzml
+
+(+ 1/3 1/6 1/2) ;; => 1
+; <- source.whizzml meta.sexpr.whizzml
+;^ keyword.operator.whizzml
+;               ^^ punctuation.definition.comment.whizzml
+
+(try
+  (log-info "Trying primary source")
+  (create-dataset {"source" "source/123678907959482245aa31"})
+  (catch e
+    (log-warn "Could not create primary source: " e)
+    (create-dataset {"source" "source/12345678901234567890abcd"})))
+; <- source.whizzml meta.sexpr.whizzml
+; ^ meta.function.catch_form.whizzml
+
+(handle on-error
+  (when (negative? (get-x))
+    (raise {"code" -1 "message" "Error: negative x"}))
+  (do-something (get-x)))

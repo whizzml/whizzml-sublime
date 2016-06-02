@@ -1,0 +1,10 @@
+# Mac
+.DS_Store
+
+# Misc
+*.swl
+*.swm
+*.swn
+*.swo
+*.swp
+.project
