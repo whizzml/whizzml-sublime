@@ -930,28 +930,28 @@ contexts:
               pop: true
             - include: all
         - include: all
-    - match: (?<=\()\s*(gen-class)\s+
-    # - match: (?<=\()\s*(handle)\s+
-      captures:
-        1: support.function.whizzml
-        #1: keyword.control.whizzml
-      push:
-        - meta_scope: meta.function.genclass_form.whizzml
-        # - meta_scope: meta.function.handle_form.whizzml
-        - match: (?=\))
-          pop: true
-        # - include: genclass_parameters
-    - match: (?<=\()\s*(gen-interface)\s+
-    # - match: (?<=\()\s*(raise)\s+
-      captures:
-        1: support.function.whizzml
-        # 1: keyword.control.whizzml
-      push:
-        - meta_scope: meta.function.geninterface_form.whizzml
-        # - meta_scope: meta.function.raise_form.whizzml
-        - match: (?=\))
-          pop: true
-        # - include: geninterface_parameters
+    # - match: (?<=\()\s*(gen-class)\s+
+    # # - match: (?<=\()\s*(handle)\s+
+    #   captures:
+    #     1: support.function.whizzml
+    #     #1: keyword.control.whizzml
+    #   push:
+    #     - meta_scope: meta.function.genclass_form.whizzml
+    #     # - meta_scope: meta.function.handle_form.whizzml
+    #     - match: (?=\))
+    #       pop: true
+    #     # - include: genclass_parameters
+    # - match: (?<=\()\s*(gen-interface)\s+
+    # # - match: (?<=\()\s*(raise)\s+
+    #   captures:
+    #     1: support.function.whizzml
+    #     # 1: keyword.control.whizzml
+    #   push:
+    #     - meta_scope: meta.function.geninterface_form.whizzml
+    #     # - meta_scope: meta.function.raise_form.whizzml
+    #     - match: (?=\))
+    #       pop: true
+    #     # - include: geninterface_parameters
     - match: (?<=\()\s*((catch)\s+)
       captures:
         2: keyword.control.whizzml
@@ -976,20 +976,21 @@ contexts:
               pop: true
             - include: all
         - include: all
-        # Added from below
-        - match: '(?<=\])'
+        # Added from below 1049
+        # - match: '(?<=\])'
+        - match: '(?<=\))'
           push:
             - match: (?=\))
               pop: true
             - include: comment
-            - match: '(?=\[)'
+            - match: '(?=\()'
               push:
                 - meta_scope: meta.function.body.catch_form.whizzml
                 - match: (?=\))
                   pop: true
                 - include: comment
                 - include: parameters
-                - match: '(?<=\])'
+                - match: '(?<=\))'
                   push:
                     - match: (?=\))
                       pop: true

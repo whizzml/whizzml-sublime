@@ -34,14 +34,16 @@
 ;        ^ meta.expression.vector.whizzml
 ;         ^ meta.expression.map.whizzml
 
+(create-dataset map-of-options)
+
 (let (color "green"
       size 123)
   {"a thing" {"s" size}
    "another ;; thing" [size color]})
+; <- source.whizzml meta.sexpr.whizzml
   ; <- meta.expression.map.whizzml
   ;          ^  meta.expression.map.whizzml
   ;                   ^ meta.expression.vector.whizzml
-; <- source.whizzml meta.sexpr.whizzml
 
 (wait (create-source {"remote" "http://host.com/foo.csv"}) 1000)
 ; <- source.whizzml meta.sexpr.whizzml
