@@ -159,7 +159,6 @@ log2
 loop
 make-map
 map
-map
 map?
 matches
 matches?

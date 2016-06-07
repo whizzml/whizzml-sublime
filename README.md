@@ -1,9 +1,9 @@
-# WhizzML for SublimeText 3
+# WhizzML for Sublime Text 3
 
 BigML's DSL for Machine Learning WhizzML syntax highlighting, autocompletions,
 and settings for Sublime Text.
 
-## Instalattion
+## Instalation
 
 ### Using Package Control
 
@@ -13,16 +13,16 @@ Palette panel from Tools > Command Palette (cmd+shift+P).
 ### Manually
 
 Copy `WhizzML.sublime-syntax`, `WhizzML.sublime-completions`, and
-`WhizzML.sublime-settings` or clone this repository inside SublimeText
-Packages directory.
+`WhizzML.sublime-settings` or clone this repository inside the User directory
+in Sublime Text's Packages directory.
 
 ## Features
 
 - Syntax highlighting
 - Autocomplete
 - Syntax settings (auto-indent, tab size, etc.)
-- **Future** __Snippets__
-- **Future** __Code lintener__
+- **Future** _Snippets_
+- **Future** _Code linter_
 
 ## Development
 
@@ -32,3 +32,14 @@ Copy `WhizzML.sublime-syntax`, `WhizzML.sublime-completions`, and
 When you're done make sure that tests on syntax highlighting pass using the
 test file `syntax_test.whizzml`. Open it and using Command Palette panel run
 the command "Build With: Syntax Tests - All Syntaxes".
+
+#### Dev resources
+
+- Sublime Text syntax higlighting:
+    - [Official Docs](http://www.sublimetext.com/docs/3/syntax.html)
+    - [Unofficial Documentation](http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html)
+- Sublime Text autocompletion:
+    - [Unofficial Documentation](http://docs.sublimetext.info/en/latest/extensibility/completions.html)
+- Sublime Text packages:
+    - [Official Docs](https://www.sublimetext.com/docs/3/packages.html)
+    - [PackageControl.io: Submitting a package](https://packagecontrol.io/docs/submitting_a_package)
