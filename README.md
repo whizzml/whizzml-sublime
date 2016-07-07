@@ -3,6 +3,8 @@
 BigML's DSL for Machine Learning WhizzML syntax highlighting, autocompletions,
 and settings for Sublime Text.
 
+![WhizzML-Sublime](https://raw.githubusercontent.com/whizzml/whizzml-sublime/master/whizzml-sublime.gif "WhizzML-Sublime")
+
 ## Instalation
 
 ### Using Package Control
