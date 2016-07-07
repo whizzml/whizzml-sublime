@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.14
+/* WhizzML Version: 0.16.1
 /*********************************************************/
 !=
 *
@@ -29,6 +29,7 @@ bigml--cdf
 bigml--pdf
 boolean?
 break
+butlast
 catch
 ceil
 concat
@@ -123,6 +124,7 @@ iterate
 join
 keys
 lambda
+last
 let
 list
 list*
@@ -243,6 +245,10 @@ update
 update-and-wait
 values
 variance
+version
+version-major
+version-micro
+version-minor
 wait
 wait*
 wait-forever
