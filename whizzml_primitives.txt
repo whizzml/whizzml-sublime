@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.16.1
+/* WhizzML Version: 0.18.0
 /*********************************************************/
 !=
 *
@@ -181,7 +181,9 @@ or
 parse-resource-id
 positive?
 pow
+ppr-str
 pr-str
+pretty-whizzml
 procedure?
 prog
 raise

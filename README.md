@@ -45,3 +45,6 @@ the command "Build With: Syntax Tests - All Syntaxes".
 - Sublime Text packages:
     - [Official Docs](https://www.sublimetext.com/docs/3/packages.html)
     - [PackageControl.io: Submitting a package](https://packagecontrol.io/docs/submitting_a_package)
+
+## Current WhizzML Version supported
+    0.18.0 (07-20-2016)
