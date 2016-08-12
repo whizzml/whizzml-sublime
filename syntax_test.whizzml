@@ -82,3 +82,15 @@
   (when (negative? (get-x))
     (raise {"code" -1 "message" "Error: negative x"}))
   (do-something (get-x)))
+
+(define A "foo")
+;       ^ constant.other.single.whizzml
+
+(define AAAA "foo")
+;       ^ constant.other.multiple.whizzml
+
+(define AA-AA "foo")
+;       ^ constant.other.multiple.whizzml
+
+(define 1 "aaaa")
+;       ^invalid.illegal.symbol.whizzml

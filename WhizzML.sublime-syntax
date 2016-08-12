@@ -643,8 +643,10 @@ contexts:
       captures:
         2: invalid.illegal.escape.string.whizzml
   symbol:
-    - match: '\b[A-Z_]{2,}\b'
-      scope: constant.other.whizzml.whizzml
+    - match: '\b[A-Z]\b'
+      scope: constant.other.single.whizzml
+    - match: '\b[A-Z0-9_\-]{2,}\b'
+      scope: constant.other.multiple.whizzml
     - match: '(?<![a-zA-Z+!\-_?0-9*])\*[a-z\-]{2,}\*(?![a-zA-Z+!\-_?0-9*])'
       scope: source.symbol.global.whizzml
     - match: '(?=[a-zA-Z+!\-_?0-9*=])'
