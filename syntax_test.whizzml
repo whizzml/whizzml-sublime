@@ -94,3 +94,5 @@
 
 (define 1 "aaaa")
 ;       ^invalid.illegal.symbol.whizzml
+
+
