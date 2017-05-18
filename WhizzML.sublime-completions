@@ -134,7 +134,7 @@
         {"trigger": "lambda", "contents": "lambda"},
         {"trigger": "last\tGet last element of a list", "contents": "last"},
         {"trigger": "let", "contents": "let"},
-        {"trigger": "levenshtein\tCompute (non-neg integer) the distance between two string values", "contents": "levenshtein $1 $2"},
+        {"trigger": "levenshtein\tCompute the distance between two string values (non-negative integer) ", "contents": "levenshtein $1 $2"},
         {"trigger": "list\tConstruct a list", "contents": "list $1"},
         {"trigger": "list*\tPrepend elements to a list", "contents": "list* $1 $2"},
         {"trigger": "list-anomalies\tList Anomalies", "contents": "list-anomalies"},
@@ -180,7 +180,7 @@
         {"trigger": "matches?", "contents": "matches?"},
         {"trigger": "max\tCompute the maximum of", "contents": "max $1"},
         {"trigger": "max-key", "contents": "max-key"},
-        {"trigger": "md5\tGenerate the Hash (MD5) of a string", "contents": "md5 $1"},
+        {"trigger": "md5\tCompute the MD5 hash of a string", "contents": "md5 $1"},
         {"trigger": "mean", "contents": "mean"},
         {"trigger": "member?", "contents": "member?"},
         {"trigger": "merge", "contents": "merge"},
@@ -229,8 +229,8 @@
         {"trigger": "row-distance", "contents": "row-distance"},
         {"trigger": "row-distance-squared", "contents": "row-distance-squared"},
         {"trigger": "set-rng-seed", "contents": "set-rng-seed"},
-        {"trigger": "sha1\tGenerate the Hash (SHA1) of a string", "contents": "sha1 $1"},
-        {"trigger": "sha256\tGenerate the Hash (SHA256) of a string", "contents": "sha256 $1"},
+        {"trigger": "sha1\tCompute the SHA1 hash of a string", "contents": "sha1 $1"},
+        {"trigger": "sha256\tCompute the SHA256 hash of a string", "contents": "sha256 $1"},
         {"trigger": "sin\tSine", "contents": "sin $1"},
         {"trigger": "sinh\tHyperbolic sine", "contents": "sinh $1"},
         {"trigger": "smacdown--actual", "contents": "smacdown--actual"},
@@ -277,7 +277,7 @@
         {"trigger": "wait-forever", "contents": "wait-forever"},
         {"trigger": "wait-forever*", "contents": "wait-forever*"},
         {"trigger": "when", "contents": "when"},
-        {"trigger": "with-time-log\tLog running time", "contents": "with-time-log ($1)"},
+        {"trigger": "with-time-log\tEvaluate body and log evaluation time", "contents": "with-time-log ($1)"},
         {"trigger": "zero?\tCheck if zero", "contents": "zero? $1"}
     ]
 }
