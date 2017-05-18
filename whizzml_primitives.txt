@@ -103,6 +103,7 @@ create-statisticaltest
 create-topicdistribution
 create-topicmodel
 created-resources
+current-time
 dataset-choose-objective-id
 dataset-get-objective-id
 datetime-field?
@@ -147,6 +148,7 @@ keys
 lambda
 last
 let
+levenshtein
 list
 list*
 list-anomalies
@@ -192,6 +194,7 @@ matches
 matches?
 max
 max-key
+md5
 mean
 member?
 merge
@@ -240,6 +243,8 @@ round
 row-distance
 row-distance-squared
 set-rng-seed
+sha1
+sha256
 sin
 sinh
 smacdown--actual
@@ -286,4 +291,5 @@ wait*
 wait-forever
 wait-forever*
 when
+with-time-log
 zero?

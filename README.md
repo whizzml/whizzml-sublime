@@ -47,4 +47,4 @@ the command "Build With: Syntax Tests - All Syntaxes".
     - [PackageControl.io: Submitting a package](https://packagecontrol.io/docs/submitting_a_package)
 
 ## Current WhizzML Version supported
-    0.20.0 (11-13-2016)
+    0.21.1 (05-11-2017)
