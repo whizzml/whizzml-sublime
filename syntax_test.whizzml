@@ -97,3 +97,6 @@
 
 (md5 "foo")
 ;^ support.function.whizzml
+
+(create-deepnet {"dataset" "dataset/"})
+;^ support.function.whizzml

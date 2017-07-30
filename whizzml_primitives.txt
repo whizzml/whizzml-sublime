@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.18.0
+/* WhizzML Version: 0.21.4
 /*********************************************************/
 !=
 *
@@ -58,9 +58,11 @@ create-and-wait-cluster
 create-and-wait-configuration
 create-and-wait-correlation
 create-and-wait-dataset
+create-and-wait-deepnet
 create-and-wait-ensemble
 create-and-wait-evaluation
 create-and-wait-execution
+create-and-wait-forecast
 create-and-wait-library
 create-and-wait-logisticregression
 create-and-wait-model
@@ -70,6 +72,7 @@ create-and-wait-sample
 create-and-wait-script
 create-and-wait-source
 create-and-wait-statisticaltest
+create-and-wait-timeseries
 create-and-wait-topicdistribution
 create-and-wait-topicmodel
 create-anomaly
@@ -86,9 +89,11 @@ create-configuration
 create-correlation
 create-dataset
 create-dataset-split
+create-deepnet
 create-ensemble
 create-evaluation
 create-execution
+create-forecast
 create-library
 create-logisticregression
 create-model
@@ -100,6 +105,7 @@ create-sample
 create-script
 create-source
 create-statisticaltest
+create-timeseries
 create-topicdistribution
 create-topicmodel
 created-resources
@@ -164,9 +170,11 @@ list-clusters
 list-configurations
 list-correlations
 list-datasets
+list-deepnets
 list-ensembles
 list-evaluations
 list-executions
+list-forecasts
 list-libraries
 list-logisticregressions
 list-models
@@ -176,6 +184,7 @@ list-samples
 list-scripts
 list-sources
 list-statisticaltests
+list-timeseries
 list-topicdistributions
 list-topicmodels
 list?
