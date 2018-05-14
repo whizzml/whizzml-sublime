@@ -100,3 +100,12 @@
 
 (create-deepnet {"dataset" "dataset/"})
 ;^ support.function.whizzml
+
+(create-composite {"dataset" "dataset"})
+;^ support.function.whizzml
+
+(create-and-wait-optiml {"dataset" "dataset/"})
+;^ support.function.whizzml
+
+(create-and-wait-fusion {"models" ["model/" "ensemble"]})
+;^ support.function.whizzml

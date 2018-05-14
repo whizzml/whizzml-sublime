@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.21.4
+/* WhizzML Version: 0.27.1
 /*********************************************************/
 !=
 *
@@ -33,6 +33,7 @@ butlast
 catch
 categorical-field?
 ceil
+chi-squared-test
 concat
 cond
 cons
@@ -55,6 +56,7 @@ create-and-wait-batchprediction
 create-and-wait-batchtopicdistribution
 create-and-wait-centroid
 create-and-wait-cluster
+create-and-wait-composite
 create-and-wait-configuration
 create-and-wait-correlation
 create-and-wait-dataset
@@ -63,9 +65,11 @@ create-and-wait-ensemble
 create-and-wait-evaluation
 create-and-wait-execution
 create-and-wait-forecast
+create-and-wait-fusion
 create-and-wait-library
 create-and-wait-logisticregression
 create-and-wait-model
+create-and-wait-optiml
 create-and-wait-prediction
 create-and-wait-project
 create-and-wait-sample
@@ -85,6 +89,7 @@ create-batchprediction
 create-batchtopicdistribution
 create-centroid
 create-cluster
+create-composite
 create-configuration
 create-correlation
 create-dataset
@@ -94,9 +99,11 @@ create-ensemble
 create-evaluation
 create-execution
 create-forecast
+create-fusion
 create-library
 create-logisticregression
 create-model
+create-optiml
 create-prediction
 create-project
 create-random-dataset-split
@@ -122,6 +129,7 @@ div
 drop
 empty?
 even?
+every?
 exp
 fetch
 field-categories
@@ -139,6 +147,7 @@ flatline-str
 flatline-str-splice
 floor
 for
+gamma
 get
 get-in
 handle
@@ -167,6 +176,7 @@ list-batchpredictions
 list-batchtopicdistributions
 list-centroids
 list-clusters
+list-composites
 list-configurations
 list-correlations
 list-datasets
@@ -175,9 +185,11 @@ list-ensembles
 list-evaluations
 list-executions
 list-forecasts
+list-fusions
 list-libraries
 list-logisticregressions
 list-models
+list-optimls
 list-predictions
 list-projects
 list-samples
@@ -190,11 +202,15 @@ list-topicmodels
 list?
 ln
 log
+log-debug
 log-error
 log-info
+log-level
+log-progress
 log-warn
 log10
 log2
+logged-progress
 loop
 make-map
 map
@@ -251,6 +267,8 @@ reverse
 round
 row-distance
 row-distance-squared
+select-keys
+set-log-level
 set-rng-seed
 sha1
 sha256

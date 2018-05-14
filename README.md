@@ -30,10 +30,12 @@ in Sublime Text's Packages directory.
 
 Copy `WhizzML.sublime-syntax`, `WhizzML.sublime-completions`, and
 `WhizzML.sublime-settings` into
-`<path-to-sublime-installation>/Packages/User`. Modify the desired definitions.
-When you're done make sure that tests on syntax highlighting pass using the
-test file `syntax_test.whizzml`. Open it and using Command Palette panel run
-the command "Build With: Syntax Tests - All Syntaxes".
+`<path-to-sublime-installation>/Packages/User`
+(`~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User` in Mac).
+Modify the desired definitions. When you're done make sure that tests on syntax
+highlighting pass using the test file `syntax_test.whizzml`. Open it and using
+Command Palette panel run the command "Build With: Syntax Tests - All
+Syntaxes".
 
 #### Dev resources
 
