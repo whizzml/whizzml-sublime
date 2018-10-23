@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.27.1
+/* WhizzML Version: 0.28.5
 /*********************************************************/
 !=
 *
@@ -25,8 +25,6 @@ asin
 assoc
 assoc-in
 atan
-bigml--cdf
-bigml--pdf
 boolean?
 break
 butlast
@@ -34,6 +32,7 @@ catch
 categorical-field?
 ceil
 chi-squared-test
+compare-objects
 concat
 cond
 cons
@@ -53,6 +52,7 @@ create-and-wait-associationset
 create-and-wait-batchanomalyscore
 create-and-wait-batchcentroid
 create-and-wait-batchprediction
+create-and-wait-batchprojection
 create-and-wait-batchtopicdistribution
 create-and-wait-centroid
 create-and-wait-cluster
@@ -70,8 +70,10 @@ create-and-wait-library
 create-and-wait-logisticregression
 create-and-wait-model
 create-and-wait-optiml
+create-and-wait-pca
 create-and-wait-prediction
 create-and-wait-project
+create-and-wait-projection
 create-and-wait-sample
 create-and-wait-script
 create-and-wait-source
@@ -86,6 +88,7 @@ create-associationset
 create-batchanomalyscore
 create-batchcentroid
 create-batchprediction
+create-batchprojection
 create-batchtopicdistribution
 create-centroid
 create-cluster
@@ -104,8 +107,10 @@ create-library
 create-logisticregression
 create-model
 create-optiml
+create-pca
 create-prediction
 create-project
+create-projection
 create-random-dataset-split
 create-rng
 create-sample
@@ -159,6 +164,7 @@ integer?
 items-field?
 iterate
 join
+json-str
 keys
 lambda
 last
@@ -173,6 +179,7 @@ list-associationsets
 list-batchanomalyscores
 list-batchcentroids
 list-batchpredictions
+list-batchprojections
 list-batchtopicdistributions
 list-centroids
 list-clusters
@@ -190,7 +197,9 @@ list-libraries
 list-logisticregressions
 list-models
 list-optimls
+list-pcas
 list-predictions
+list-projections
 list-projects
 list-samples
 list-scripts
@@ -256,17 +265,21 @@ repeat
 repeatedly
 replace
 replace-first
+replace-first-string
+replace-string
 resource-done?
 resource-fields
 resource-id
 resource-id?
 resource-ids
 resource-type
+resource-workflow
 resources
 reverse
 round
 row-distance
 row-distance-squared
+scriptify
 select-keys
 set-log-level
 set-rng-seed

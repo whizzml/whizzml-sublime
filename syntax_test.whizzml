@@ -109,3 +109,16 @@
 
 (create-and-wait-fusion {"models" ["model/" "ensemble"]})
 ;^ support.function.whizzml
+
+(create-and-wait-pca {"dataset" "dataset/"})
+;^ support.function.whizzml
+
+(create-projection {"pca" "pca/"
+;^ support.function.whizzml
+                    "input_data" {"" }})
+
+(scriptify foo)
+;^ support.function.whizzml
+
+(compare-objects foo bar)
+;^ support.function.whizzml
