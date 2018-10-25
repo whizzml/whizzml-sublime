@@ -49,4 +49,4 @@ Syntaxes".
     - [PackageControl.io: Submitting a package](https://packagecontrol.io/docs/submitting_a_package)
 
 ## Current WhizzML Version supported
-    0.28.5 (10-24-2018)
+    0.28.6 (10-24-2018)

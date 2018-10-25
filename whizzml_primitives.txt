@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.28.5
+/* WhizzML Version: 0.28.6
 /*********************************************************/
 !=
 *
