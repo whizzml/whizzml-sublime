@@ -48,5 +48,15 @@ Syntaxes".
     - [Official Docs](https://www.sublimetext.com/docs/3/packages.html)
     - [PackageControl.io: Submitting a package](https://packagecontrol.io/docs/submitting_a_package)
 
+A way to get the list of WhizzML reserved names used to build the syntax and completions rules is to
+run the following commands in the DevTools JS console of the Web WhizzML REPL.
+
+```javascript
+privatePrefixRegex = /^bigml/;
+whizzml.user.reserved_names().filter(function(p) {
+    return !privatePrefixRegex.test(p);
+}).join('\n')
+```
+
 ## Current WhizzML Version supported
-    0.28.6 (10-24-2018)
+    0.29.3 (03-18-2019)

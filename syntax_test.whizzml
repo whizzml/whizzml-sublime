@@ -117,8 +117,20 @@
 ;^ support.function.whizzml
                     "input_data" {"" }})
 
+(create-and-wait-linearregression {"dataset" "dataset/"})
+;^ support.function.whizzml
+
+(list-linearregressions)
+;^ support.function.whizzml
+
 (scriptify foo)
 ;^ support.function.whizzml
 
 (compare-objects foo bar)
+;^ support.function.whizzml
+
+(capitalize "foo")
+;^ support.function.whizzml
+
+(lower-case "BAR")
 ;^ support.function.whizzml

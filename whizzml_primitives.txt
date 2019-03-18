@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.28.6
+/* WhizzML Version: 0.29.3
 /*********************************************************/
 !=
 *
@@ -28,6 +28,7 @@ atan
 boolean?
 break
 butlast
+capitalize
 catch
 categorical-field?
 ceil
@@ -67,6 +68,7 @@ create-and-wait-execution
 create-and-wait-forecast
 create-and-wait-fusion
 create-and-wait-library
+create-and-wait-linearregression
 create-and-wait-logisticregression
 create-and-wait-model
 create-and-wait-optiml
@@ -104,6 +106,7 @@ create-execution
 create-forecast
 create-fusion
 create-library
+create-linearregression
 create-logisticregression
 create-model
 create-optiml
@@ -194,6 +197,7 @@ list-executions
 list-forecasts
 list-fusions
 list-libraries
+list-linearregressions
 list-logisticregressions
 list-models
 list-optimls
@@ -221,6 +225,7 @@ log10
 log2
 logged-progress
 loop
+lower-case
 make-map
 map
 map?
@@ -320,6 +325,7 @@ to-radians
 try
 update
 update-and-wait
+upper-case
 values
 variance
 version
