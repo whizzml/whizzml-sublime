@@ -34,6 +34,18 @@
 ;        ^ meta.expression.vector.whizzml
 ;         ^ meta.expression.map.whizzml
 
+(set? #[1 2 3])
+;<- source.whizzml meta.sexpr.whizzml
+;^ support.function.tester.whizzml
+;     <- meta.sexpr.whizzml
+;     ^ meta.expression.vector.whizzml
+;      ^ meta.expression.vector.whizzml
+
+(union #[1 2] #[false 1 4])
+;<- source.whizzml meta.sexpr.whizzml
+;^ support.function.whizzml
+;      ^ meta.expression.vector.whizzml
+
 (create-dataset map-of-options)
 
 (let (color "green"
@@ -134,3 +146,15 @@
 
 (lower-case "BAR")
 ;^ support.function.whizzml
+
+(read-number "33.444")
+;^ support.function.whizzml
+;            ^ string.quoted.double.whizzml
+
+(split "a,b" ",")
+;^ support.function.whizzml
+;      ^ string.quoted.double.whizzml
+
+(split-regexp "a,,b,c" ",+" 2)
+;^ support.function.whizzml
+;             ^ string.quoted.double.whizzml

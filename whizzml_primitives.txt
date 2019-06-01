@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.31.1
+/* WhizzML Version: 0.32.1
 /*********************************************************/
 !=
 *
@@ -264,6 +264,7 @@ rand-int
 rand-range
 range
 re-quote
+read-number
 real?
 recur
 reduce
@@ -318,6 +319,8 @@ smacdown-optimize
 some
 sort
 sort-by-key
+split
+split-regexp
 sqrt
 stdev
 str
