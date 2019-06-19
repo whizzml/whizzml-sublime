@@ -3,7 +3,7 @@
 /* Use this file to list WhizzML primitives and check
 /* updates in the original list.
 /*
-/* WhizzML Version: 0.32.1
+/* WhizzML Version: 0.33.1
 /*********************************************************/
 !=
 *
@@ -240,6 +240,7 @@ md5
 mean
 member?
 merge
+merge-datasets
 min
 min-key
 negative?
@@ -283,6 +284,8 @@ resource-fields
 resource-id
 resource-id?
 resource-ids
+resource-name
+resource-property
 resource-type
 resource-workflow
 resources
