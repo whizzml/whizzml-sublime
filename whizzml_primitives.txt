@@ -140,6 +140,11 @@ drop
 empty?
 even?
 every?
+execution-inputs
+execution-logs
+execution-output-resources
+execution-outputs
+execution-sources
 exp
 fetch
 field-categories
@@ -155,6 +160,7 @@ flatline-listify
 flatline-splice
 flatline-str
 flatline-str-splice
+flatten
 floor
 for
 gamma
@@ -252,6 +258,7 @@ numeric-field?
 odd?
 or
 parse-resource-id
+partial
 positive?
 pow
 ppr-str
@@ -287,6 +294,7 @@ resource-ids
 resource-name
 resource-property
 resource-type
+resource-types
 resource-workflow
 resources
 reverse
@@ -294,6 +302,7 @@ round
 row-distance
 row-distance-squared
 scriptify
+scriptify-test
 select-keys
 set
 set*
@@ -304,6 +313,7 @@ sha1
 sha256
 sin
 sinh
+sleep
 smacdown--actual
 smacdown--aggregate-predictions
 smacdown--candidates

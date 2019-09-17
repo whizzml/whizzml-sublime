@@ -59,4 +59,4 @@ whizzml.user.reserved_names().filter(function(p) {
 ```
 
 ## Current WhizzML Version supported
-    0.33.1 (06-18-2019)
+    0.35.0 (08-29-2019)

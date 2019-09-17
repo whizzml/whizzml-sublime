@@ -158,3 +158,22 @@
 (split-regexp "a,,b,c" ",+" 2)
 ;^ support.function.whizzml
 ;             ^ string.quoted.double.whizzml
+
+(merge-datasets list("aaaa" "bbbb"))
+;^ support.function.whizzml
+
+(flatten {"foo" "a" "bar" [1 2 3]})
+;^^^^^^^ meta.sexpr.whizzml support.function.whizzml
+;        ^ meta.sexpr.whizzml meta.expression.map.whizzml punctuation.definition.map.begin.whizzml
+;                         ^ meta.sexpr.whizzml meta.expression.map.whizzml meta.expression.vector.whizzml punctuation.definition.vector.begin.whizzml
+
+(partial foo)
+;^^^^^^^ meta.sexpr.whizzml support.function.whizzml
+;        ^^^ source.symbol.whizzml
+
+(resource-types)
+;^^^^^^^^^^^^^^ meta.sexpr.whizzml support.function.whizzml
+
+(sleep 12345)
+;^ support.function.whizzml
+
